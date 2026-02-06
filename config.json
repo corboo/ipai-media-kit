@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "title": "Inception Point AI - Media Kit",
+    "description": "Partner with the world's largest AI-native podcast network",
+    "lastUpdated": "2026-02-06",
+    "contactEmail": "partnerships@inceptionpoint.ai"
+  },
+  "stats": {
+    "shows": "5,000+",
+    "episodes": "200,000+",
+    "totalDownloads": "13M+",
+    "monthlyListens": "750K+",
+    "episodesPerWeek": "3,000+"
+  },
+  "categories": [
+    {
+      "name": "History & Biography",
+      "icon": "📚",
+      "shows": "500+",
+      "downloads": "2M+"
+    },
+    {
+      "name": "Public Domain & Literature",
+      "icon": "🎭",
+      "shows": "300+",
+      "downloads": "3M+"
+    },
+    {
+      "name": "Health & Wellness",
+      "icon": "🏥",
+      "shows": "200+",
+      "downloads": "1.5M+"
+    },
+    {
+      "name": "Business & Finance",
+      "icon": "💰",
+      "shows": "150+",
+      "downloads": "800K+"
+    },
+    {
+      "name": "Technology & AI",
+      "icon": "🤖",
+      "shows": "100+",
+      "downloads": "500K+"
+    },
+    {
+      "name": "Weather & Local",
+      "icon": "🌤️",
+      "shows": "50+",
+      "downloads": "250K+"
+    },
+    {
+      "name": "Sports",
+      "icon": "🏈",
+      "shows": "100+",
+      "downloads": "600K+"
+    },
+    {
+      "name": "Entertainment & Celebrity",
+      "icon": "🎬",
+      "shows": "200+",
+      "downloads": "1M+"
+    }
+  ],
+  "topShows": [
+    {
+      "title": "Gunsmoke - Old Time Radio",
+      "category": "Public Domain Radio",
+      "icon": "🔫",
+      "lifetimeDownloads": "171,972",
+      "monthlyDownloads": "14,710"
+    },
+    {
+      "title": "Poirot Investigates - Agatha Christie",
+      "category": "Mystery",
+      "icon": "🔍",
+      "lifetimeDownloads": "232,788",
+      "monthlyDownloads": "9,672"
+    },
+    {
+      "title": "Andrew Huberman - Biography Flash",
+      "category": "Biography",
+      "icon": "🧠",
+      "lifetimeDownloads": "103,751",
+      "monthlyDownloads": "9,809"
+    },
+    {
+      "title": "Agatha Christie Radio Plays",
+      "category": "Mystery",
+      "icon": "📻",
+      "lifetimeDownloads": "153,826",
+      "monthlyDownloads": "8,163"
+    },
+    {
+      "title": "Jason & Travis Kelce - Football Brothers",
+      "category": "Sports",
+      "icon": "🏈",
+      "lifetimeDownloads": "75,895",
+      "monthlyDownloads": "4,661"
+    },
+    {
+      "title": "Warren Buffett - Biography Flash",
+      "category": "Biography",
+      "icon": "💼",
+      "lifetimeDownloads": "41,029",
+      "monthlyDownloads": "3,018"
+    }
+  ],
+  "analytics": {
+    "googleAnalyticsId": "G-XXXXXXXXXX",
+    "notes": "Replace G-XXXXXXXXXX with your actual GA4 property ID"
+  },
+  "dataSource": {
+    "spreadsheetUrl": "https://docs.google.com/spreadsheets/d/1sNGZ03EeEtqqR4qgNmCpXgc4XebtUtjqCkctiax-uoA/edit",
+    "notes": "Stats can be refreshed from this spreadsheet"
+  }
+}
