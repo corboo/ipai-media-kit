@@ -3,27 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Media Kit | Inception Point AI — Advertiser Partnerships</title>
+    <title>Advertiser Media Kit | Inception Point AI</title>
     <meta name="description" content="Partner with the world's largest AI-native podcast network. 5,000+ shows, 13M+ downloads, premium audiences.">
     
-    <!-- Google Analytics placeholder -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-XXXXXXXXXX');
-    </script>
-    
-    <!-- Visitor tracking -->
-    <script>
+        
+        // Visitor tracking
         (function() {
-            const visit = {
-                timestamp: new Date().toISOString(),
-                page: window.location.pathname,
-                referrer: document.referrer,
-                userAgent: navigator.userAgent
-            };
+            const visit = { timestamp: new Date().toISOString(), page: window.location.pathname, referrer: document.referrer };
             let visits = JSON.parse(localStorage.getItem('ipai_visits') || '[]');
             visits.push(visit);
             localStorage.setItem('ipai_visits', JSON.stringify(visits.slice(-1000)));
@@ -31,7 +23,6 @@
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
@@ -43,26 +34,20 @@
             --gray-light: #b0b0b0;
             --bg-dark: #0a0a0a;
             --bg-card: #111111;
-            --bg-card-hover: #1a1a1a;
             --text: #ffffff;
             --text-muted: #6a6a6a;
             --gradient-gold: linear-gradient(180deg, #8a8a8a 0%, #d4af37 50%, #f4d03f 100%);
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', -apple-system, sans-serif;
             background: var(--bg-dark);
             color: var(--text);
             line-height: 1.6;
         }
         
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -78,24 +63,7 @@
             border-bottom: 1px solid rgba(212, 175, 55, 0.1);
         }
         
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-        
-        .logo-img {
-            height: 40px;
-            width: auto;
-        }
-        
-        .logo-text {
-            font-size: 18px;
-            font-weight: 300;
-            letter-spacing: 4px;
-            color: var(--gray-light);
-            text-transform: uppercase;
-        }
+        .nav-logo { height: 36px; }
         
         .nav-links {
             display: flex;
@@ -112,9 +80,7 @@
             transition: color 0.3s;
         }
         
-        .nav-links a:hover {
-            color: var(--gold);
-        }
+        .nav-links a:hover { color: var(--gold); }
         
         .cta-btn {
             background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 50%, var(--gold-light) 100%);
@@ -127,6 +93,7 @@
             letter-spacing: 1px;
             text-transform: uppercase;
             transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
         }
         
         .cta-btn:hover {
@@ -134,57 +101,37 @@
             box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
         }
         
-        /* Hero Section */
         .hero {
-            min-height: 100vh;
+            min-height: 80vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 120px 40px 80px;
-            background: var(--bg-dark);
-            position: relative;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(ellipse at 50% 30%, rgba(212, 175, 55, 0.05) 0%, transparent 60%);
-            pointer-events: none;
-        }
-        
-        .hero-content {
-            max-width: 900px;
-            position: relative;
-            z-index: 1;
+            padding: 140px 40px 80px;
+            background: radial-gradient(ellipse at 50% 30%, rgba(212, 175, 55, 0.05) 0%, transparent 60%), var(--bg-dark);
         }
         
         .hero-logo {
-            width: 120px;
-            margin-bottom: 40px;
+            width: 160px;
+            margin-bottom: 24px;
         }
         
-        .hero-badge {
-            display: inline-block;
-            border: 1px solid var(--gold);
-            padding: 8px 24px;
-            font-size: 12px;
-            color: var(--gold);
-            letter-spacing: 3px;
+        .hero-title {
+            font-size: 14px;
+            letter-spacing: 6px;
             text-transform: uppercase;
-            margin-bottom: 32px;
+            color: var(--gold);
+            margin-bottom: 48px;
+            font-weight: 400;
         }
         
         h1 {
-            font-size: clamp(36px, 5vw, 60px);
+            font-size: clamp(32px, 5vw, 56px);
             font-weight: 300;
             line-height: 1.2;
             margin-bottom: 24px;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             color: var(--gray-light);
         }
         
@@ -193,7 +140,6 @@
             background: var(--gradient-gold);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
         
         .hero-subtitle {
@@ -202,10 +148,8 @@
             max-width: 600px;
             margin: 0 auto 48px;
             font-weight: 300;
-            line-height: 1.8;
         }
         
-        /* Stats Grid */
         .stats-section {
             background: var(--bg-card);
             border-top: 1px solid rgba(212, 175, 55, 0.1);
@@ -220,66 +164,58 @@
         }
         
         .stat-card {
-            padding: 60px 32px;
+            padding: 48px 24px;
             text-align: center;
             border-right: 1px solid rgba(255,255,255,0.05);
         }
         
-        .stat-card:last-child {
-            border-right: none;
-        }
+        .stat-card:last-child { border-right: none; }
         
         .stat-number {
-            font-size: 48px;
+            font-size: 42px;
             font-weight: 700;
             background: var(--gradient-gold);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
         }
         
         .stat-label {
             color: var(--gray);
-            font-size: 12px;
+            font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
         
-        /* Section */
         section {
             padding: 100px 40px;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
         
         .section-header {
             text-align: center;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
         }
         
         h2 {
-            font-size: 36px;
+            font-size: 32px;
             font-weight: 300;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             letter-spacing: 2px;
             color: var(--gray-light);
         }
         
-        h2 strong {
-            font-weight: 600;
-            color: var(--gold);
-        }
+        h2 strong { font-weight: 600; color: var(--gold); }
         
         .section-subtitle {
             color: var(--gray);
-            font-size: 16px;
+            font-size: 15px;
             max-width: 600px;
             margin: 0 auto;
-            font-weight: 300;
         }
         
-        /* Categories Grid */
+        /* Categories */
         .categories-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -290,31 +226,34 @@
         
         .category-card {
             background: var(--bg-dark);
-            padding: 40px 24px;
+            padding: 40px 20px;
             text-align: center;
             transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
         
         .category-card:hover {
             background: var(--bg-card);
         }
         
-        .category-card:hover .category-icon {
-            transform: scale(1.1);
-        }
+        .category-card:hover .category-icon { transform: scale(1.15); }
+        .category-card:hover .category-name { color: var(--gold); }
         
         .category-icon {
-            font-size: 32px;
+            font-size: 36px;
             margin-bottom: 16px;
             transition: transform 0.3s;
+            display: block;
         }
         
         .category-name {
             font-size: 14px;
             font-weight: 500;
-            margin-bottom: 8px;
-            color: var(--text);
+            margin-bottom: 6px;
             letter-spacing: 1px;
+            transition: color 0.3s;
         }
         
         .category-stats {
@@ -322,15 +261,13 @@
             font-size: 12px;
         }
         
-        .category-stats strong {
-            color: var(--gold);
-        }
+        .category-stats strong { color: var(--gold); }
         
-        /* Top Shows */
+        /* Shows Grid */
         .shows-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
         }
         
         .show-card {
@@ -346,17 +283,14 @@
         }
         
         .show-image {
-            height: 160px;
-            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 48px;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            aspect-ratio: 1;
+            background-size: cover;
+            background-position: center;
+            background-color: #1a1a1a;
         }
         
         .show-content {
-            padding: 24px;
+            padding: 16px;
         }
         
         .show-category {
@@ -364,71 +298,88 @@
             font-size: 10px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
         }
         
         .show-title {
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 500;
-            margin-bottom: 12px;
-            line-height: 1.4;
+            margin-bottom: 8px;
+            line-height: 1.3;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         
         .show-stats {
-            display: flex;
-            gap: 16px;
             color: var(--gray);
-            font-size: 13px;
+            font-size: 12px;
         }
         
-        /* Why Advertise */
+        /* Brand Integration Banner */
+        .brand-banner {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(184, 134, 11, 0.05) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 48px;
+            text-align: center;
+            margin: 60px 0;
+        }
+        
+        .brand-banner h3 {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            color: var(--gold);
+        }
+        
+        .brand-banner p {
+            color: var(--gray-light);
+            margin-bottom: 24px;
+        }
+        
+        /* Benefits */
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 48px;
+            gap: 40px;
         }
         
-        .benefit-card {
-            text-align: center;
-        }
+        .benefit-card { text-align: center; }
         
         .benefit-icon {
-            width: 64px;
-            height: 64px;
+            width: 56px;
+            height: 56px;
             border: 1px solid var(--gold);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
-            margin: 0 auto 24px;
+            font-size: 22px;
+            margin: 0 auto 20px;
         }
         
         .benefit-title {
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 500;
-            margin-bottom: 12px;
-            letter-spacing: 1px;
+            margin-bottom: 10px;
         }
         
         .benefit-desc {
             color: var(--gray);
-            font-size: 14px;
+            font-size: 13px;
             line-height: 1.7;
-            font-weight: 300;
         }
         
         /* Network Links */
         .network-section {
             background: var(--bg-card);
             border-top: 1px solid rgba(212, 175, 55, 0.1);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
             padding: 80px 40px;
         }
         
         .network-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
+            gap: 32px;
             max-width: 800px;
             margin: 0 auto;
         }
@@ -436,63 +387,30 @@
         .network-card {
             background: var(--bg-dark);
             border: 1px solid rgba(255,255,255,0.05);
-            padding: 40px;
+            padding: 32px;
             text-align: center;
             transition: all 0.3s;
             text-decoration: none;
             color: inherit;
         }
         
-        .network-card:hover {
-            border-color: rgba(212, 175, 55, 0.3);
-        }
+        .network-card:hover { border-color: rgba(212, 175, 55, 0.3); }
+        .network-card h3 { font-size: 16px; font-weight: 500; margin-bottom: 8px; color: var(--gold); }
+        .network-card p { color: var(--gray); font-size: 13px; margin-bottom: 12px; }
+        .network-card .link { color: var(--gray-light); font-size: 12px; text-decoration: underline; }
         
-        .network-card h3 {
-            font-size: 18px;
-            font-weight: 500;
-            margin-bottom: 8px;
-            color: var(--gold);
-        }
-        
-        .network-card p {
-            color: var(--gray);
-            font-size: 14px;
-            margin-bottom: 16px;
-        }
-        
-        .network-card .link {
-            color: var(--gray-light);
-            font-size: 13px;
-            text-decoration: underline;
-        }
-        
-        /* CTA Section */
+        /* CTA */
         .cta-section {
             text-align: center;
-            padding: 120px 40px;
-            position: relative;
-        }
-        
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            padding: 100px 40px;
             background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
-            pointer-events: none;
-        }
-        
-        .cta-section h2 {
-            margin-bottom: 16px;
         }
         
         .cta-buttons {
             display: flex;
             gap: 16px;
             justify-content: center;
-            margin-top: 48px;
+            margin-top: 40px;
         }
         
         .cta-secondary {
@@ -508,137 +426,70 @@
             transition: all 0.3s;
         }
         
-        .cta-secondary:hover {
-            background: var(--gold);
-            color: var(--bg-dark);
-        }
+        .cta-secondary:hover { background: var(--gold); color: var(--bg-dark); }
         
         /* Footer */
         footer {
-            padding: 60px 40px;
+            padding: 48px 40px;
             text-align: center;
             border-top: 1px solid rgba(255,255,255,0.05);
         }
         
-        .footer-logo {
-            width: 80px;
-            margin-bottom: 24px;
-            opacity: 0.6;
-        }
+        .footer-logo { width: 80px; margin-bottom: 20px; opacity: 0.6; }
+        footer p { color: var(--gray); font-size: 12px; margin-bottom: 6px; }
+        footer a { color: var(--gold); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
         
-        footer p {
-            color: var(--gray);
-            font-size: 13px;
-            margin-bottom: 8px;
-        }
-        
-        footer a {
-            color: var(--gold);
-            text-decoration: none;
-        }
-        
-        footer a:hover {
-            text-decoration: underline;
-        }
-        
-        /* Responsive */
         @media (max-width: 1024px) {
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .stat-card {
-                border-bottom: 1px solid rgba(255,255,255,0.05);
-            }
-            .stat-card:nth-child(2) {
-                border-right: none;
-            }
-            .categories-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .shows-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .benefits-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
+            .stats-grid, .categories-grid { grid-template-columns: repeat(2, 1fr); }
+            .shows-grid { grid-template-columns: repeat(3, 1fr); }
+            .benefits-grid { grid-template-columns: 1fr; }
         }
         
         @media (max-width: 768px) {
-            nav {
-                padding: 16px 20px;
-            }
-            .nav-links {
-                display: none;
-            }
-            .logo-text {
-                display: none;
-            }
-            .stats-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .stat-number {
-                font-size: 32px;
-            }
-            section {
-                padding: 60px 20px;
-            }
-            h1 {
-                font-size: 28px;
-            }
-            h2 {
-                font-size: 24px;
-            }
-            .categories-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .shows-grid {
-                grid-template-columns: 1fr;
-            }
-            .network-grid {
-                grid-template-columns: 1fr;
-            }
+            nav { padding: 16px 20px; }
+            .nav-links { display: none; }
+            .shows-grid { grid-template-columns: repeat(2, 1fr); }
+            section { padding: 60px 20px; }
+            .categories-grid { grid-template-columns: 1fr 1fr; }
+            .network-grid { grid-template-columns: 1fr; }
+            .cta-buttons { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
 <body>
     <nav>
-        <div class="logo-container">
-            <img src="logo.jpg" alt="Inception Point AI" class="logo-img">
-            <span class="logo-text">Media Kit</span>
-        </div>
+        <img src="logo.jpg" alt="Inception Point AI" class="nav-logo">
         <div class="nav-links">
-            <a href="#network">Network</a>
-            <a href="#categories">Categories</a>
             <a href="#shows">Top Shows</a>
-            <a href="#why">Why Partner</a>
+            <a href="#categories">Categories</a>
+            <a href="brand-integration.html">Brand Integration</a>
+            <a href="https://www.inceptionpoint.ai" target="_blank">About Us</a>
         </div>
-        <a href="mailto:partnerships@inceptionpoint.ai" class="cta-btn">Get in Touch</a>
+        <a href="contact.html" class="cta-btn">Get in Touch</a>
     </nav>
 
     <section class="hero">
-        <div class="hero-content">
-            <img src="logo.jpg" alt="Inception Point AI" class="hero-logo">
-            <div class="hero-badge">Advertiser Media Kit 2026</div>
-            <h1>Reach <strong>13 Million+</strong> Engaged Listeners</h1>
-            <p class="hero-subtitle">The world's largest AI-native podcast network. Premium content across every vertical, powered by technology, driven by story.</p>
-            <a href="mailto:partnerships@inceptionpoint.ai" class="cta-btn">Request Rate Card</a>
-        </div>
+        <img src="logo.jpg" alt="Inception Point AI" class="hero-logo">
+        <div class="hero-title">Advertiser Media Kit</div>
+        <h1>Reach <strong>13 Million+</strong> Engaged Listeners</h1>
+        <p class="hero-subtitle">The world's largest AI-native podcast network. Premium content across every vertical, powered by technology, driven by story.</p>
+        <a href="contact.html" class="cta-btn">Request Rate Card</a>
     </section>
 
-    <div class="stats-section" id="network">
+    <div class="stats-section">
         <div class="stats-grid">
             <div class="stat-card">
                 <div class="stat-number">5,000+</div>
                 <div class="stat-label">Active Shows</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">200,000+</div>
+                <div class="stat-number">200K+</div>
                 <div class="stat-label">Total Episodes</div>
             </div>
             <div class="stat-card">
                 <div class="stat-number">13M+</div>
-                <div class="stat-label">Total Downloads</div>
+                <div class="stat-label">Downloads</div>
             </div>
             <div class="stat-card">
                 <div class="stat-number">3,000+</div>
@@ -647,165 +498,234 @@
         </div>
     </div>
 
-    <section id="categories">
-        <div class="section-header">
-            <h2>Content <strong>Categories</strong></h2>
-            <p class="section-subtitle">Diverse verticals to reach your target audience with contextually relevant content</p>
-        </div>
-        <div class="categories-grid">
-            <div class="category-card">
-                <div class="category-icon">📚</div>
-                <div class="category-name">History & Biography</div>
-                <div class="category-stats"><strong>500+</strong> shows</div>
-            </div>
-            <div class="category-card">
-                <div class="category-icon">🎭</div>
-                <div class="category-name">Classic Literature</div>
-                <div class="category-stats"><strong>300+</strong> shows</div>
-            </div>
-            <div class="category-card">
-                <div class="category-icon">🏥</div>
-                <div class="category-name">Health & Wellness</div>
-                <div class="category-stats"><strong>200+</strong> shows</div>
-            </div>
-            <div class="category-card">
-                <div class="category-icon">💰</div>
-                <div class="category-name">Business & Finance</div>
-                <div class="category-stats"><strong>150+</strong> shows</div>
-            </div>
-            <div class="category-card">
-                <div class="category-icon">🤖</div>
-                <div class="category-name">Technology & AI</div>
-                <div class="category-stats"><strong>100+</strong> shows</div>
-            </div>
-            <div class="category-card">
-                <div class="category-icon">🌤️</div>
-                <div class="category-name">Weather & Local</div>
-                <div class="category-stats"><strong>50+</strong> markets</div>
-            </div>
-            <div class="category-card">
-                <div class="category-icon">🏈</div>
-                <div class="category-name">Sports</div>
-                <div class="category-stats"><strong>100+</strong> shows</div>
-            </div>
-            <div class="category-card">
-                <div class="category-icon">🎬</div>
-                <div class="category-name">Entertainment</div>
-                <div class="category-stats"><strong>200+</strong> shows</div>
-            </div>
-        </div>
-    </section>
-
     <section id="shows">
         <div class="section-header">
             <h2>Top <strong>Performing</strong> Shows</h2>
-            <p class="section-subtitle">Our most popular content reaching hundreds of thousands of listeners monthly</p>
+            <p class="section-subtitle">Real audience data from our highest-performing content</p>
         </div>
         <div class="shows-grid">
             <div class="show-card">
-                <div class="show-image">🔫</div>
-                <div class="show-content">
-                    <div class="show-category">Classic Radio</div>
-                    <div class="show-title">Gunsmoke - Old Time Radio</div>
-                    <div class="show-stats">
-                        <span>171K+ downloads</span>
-                        <span>14.7K/mo</span>
-                    </div>
-                </div>
-            </div>
-            <div class="show-card">
-                <div class="show-image">🔍</div>
+                <div class="show-image" style="background-image: url('https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/ad/a4/a7/ada4a764-9db2-e41b-f975-5589bcd6563e/mza_1413245080970489031.jpg/600x600bb.jpg')"></div>
                 <div class="show-content">
                     <div class="show-category">Mystery</div>
                     <div class="show-title">Poirot Investigates</div>
-                    <div class="show-stats">
-                        <span>232K+ downloads</span>
-                        <span>9.6K/mo</span>
-                    </div>
+                    <div class="show-stats">232K downloads • 9.6K/mo</div>
                 </div>
             </div>
             <div class="show-card">
-                <div class="show-image">🧠</div>
+                <div class="show-image" style="background-image: url('https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/34/4e/a1/344ea1f1-6af8-668a-c932-9908e31b7b33/mza_17965707935854077942.png/600x600bb.jpg')"></div>
+                <div class="show-content">
+                    <div class="show-category">Classic Radio</div>
+                    <div class="show-title">Suspense - Old Time Radio</div>
+                    <div class="show-stats">103K downloads • 4.6K/mo</div>
+                </div>
+            </div>
+            <div class="show-card">
+                <div class="show-image" style="background-image: url('https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/46/78/d1/4678d1d3-a4fd-e2b4-c39b-16a2eb297f0b/mza_14844896074951953967.jpg/600x600bb.jpg')"></div>
+                <div class="show-content">
+                    <div class="show-category">Biography</div>
+                    <div class="show-title">Tucker Carlson - Audio Biography</div>
+                    <div class="show-stats">128K downloads • 2.6K/mo</div>
+                </div>
+            </div>
+            <div class="show-card">
+                <div class="show-image" style="background-image: url('https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/9b/42/ed/9b42ed24-be03-dca6-ef9b-261ba86c5fed/mza_1519285041465248663.jpg/600x600bb.jpg')"></div>
                 <div class="show-content">
                     <div class="show-category">Biography</div>
                     <div class="show-title">Andrew Huberman - Biography Flash</div>
-                    <div class="show-stats">
-                        <span>103K+ downloads</span>
-                        <span>9.8K/mo</span>
-                    </div>
+                    <div class="show-stats">103K downloads • 9.8K/mo</div>
                 </div>
             </div>
             <div class="show-card">
-                <div class="show-image">📻</div>
+                <div class="show-image" style="background-image: url('https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/cf/36/b8/cf36b831-312e-3f5f-d6ca-d42785cddb58/mza_7901765155153942484.jpg/600x600bb.jpg')"></div>
                 <div class="show-content">
-                    <div class="show-category">Mystery</div>
-                    <div class="show-title">Agatha Christie Radio Plays</div>
-                    <div class="show-stats">
-                        <span>153K+ downloads</span>
-                        <span>8.1K/mo</span>
-                    </div>
+                    <div class="show-category">Biography</div>
+                    <div class="show-title">Melania Trump - Biography Flash</div>
+                    <div class="show-stats">86K downloads • 2.9K/mo</div>
                 </div>
             </div>
             <div class="show-card">
-                <div class="show-image">🏈</div>
+                <div class="show-image" style="background-image: url('https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/66/e0/8e/66e08e3c-4154-2c09-cdbf-aee9eab525ee/mza_2172135062429640476.jpg/600x600bb.jpg')"></div>
                 <div class="show-content">
                     <div class="show-category">Sports</div>
                     <div class="show-title">Jason & Travis Kelce</div>
-                    <div class="show-stats">
-                        <span>75K+ downloads</span>
-                        <span>4.6K/mo</span>
-                    </div>
+                    <div class="show-stats">75K downloads • 4.6K/mo</div>
                 </div>
             </div>
             <div class="show-card">
-                <div class="show-image">💼</div>
+                <div class="show-image" style="background-image: url('https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/71/69/8d/71698d38-a8c9-50d3-16c3-97f1bf807c06/mza_10971369147847473388.jpg/600x600bb.jpg')"></div>
                 <div class="show-content">
-                    <div class="show-category">Biography</div>
+                    <div class="show-category">Business</div>
                     <div class="show-title">Warren Buffett - Biography Flash</div>
-                    <div class="show-stats">
-                        <span>41K+ downloads</span>
-                        <span>3K/mo</span>
-                    </div>
+                    <div class="show-stats">41K downloads • 3K/mo</div>
+                </div>
+            </div>
+            <div class="show-card">
+                <div class="show-image" style="background-image: url('https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/dc/c1/34/dcc13416-5e14-6406-e991-dc0e84af6aa7/mza_13513310369769558860.jpg/600x600bb.jpg')"></div>
+                <div class="show-content">
+                    <div class="show-category">Music</div>
+                    <div class="show-title">Drake - Biography Flash</div>
+                    <div class="show-stats">13K downloads • 1.1K/mo</div>
+                </div>
+            </div>
+            <div class="show-card">
+                <div class="show-image" style="background-image: url('https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/ce/6e/b4/ce6eb421-e49d-b581-0c62-3ba2efb0b578/mza_1296191975873699613.jpg/600x600bb.jpg')"></div>
+                <div class="show-content">
+                    <div class="show-category">Music</div>
+                    <div class="show-title">Ed Sheeran - Biography Flash</div>
+                    <div class="show-stats">19K downloads • 1.5K/mo</div>
+                </div>
+            </div>
+            <div class="show-card">
+                <div class="show-image" style="background-image: url('https://is1-ssl.mzstatic.com/image/thumb/Podcasts116/v4/ed/ed/82/eded821b-0298-bdf5-45fb-22d7356db1e4/mza_7903142216035653696.jpg/600x600bb.jpg')"></div>
+                <div class="show-content">
+                    <div class="show-category">Music</div>
+                    <div class="show-title">Dolly Parton - Audio Biography</div>
+                    <div class="show-stats">8.6K downloads • 1K/mo</div>
+                </div>
+            </div>
+            <div class="show-card">
+                <div class="show-image" style="background-image: url('https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/11/22/d9/1122d921-bb43-3f8a-3f16-f3e078a49b4d/mza_16681339675441317369.jpg/600x600bb.jpg')"></div>
+                <div class="show-content">
+                    <div class="show-category">Wellness</div>
+                    <div class="show-title">The Morning Person - Daily Meditation</div>
+                    <div class="show-stats">64K downloads • 3.3K/mo</div>
+                </div>
+            </div>
+            <div class="show-card">
+                <div class="show-image" style="background-image: url('https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/5a/1f/bf/5a1fbfac-1a32-ce01-efcb-a0819d71f504/mza_4544769180270079112.jpg/600x600bb.jpg')"></div>
+                <div class="show-content">
+                    <div class="show-category">Science</div>
+                    <div class="show-title">James Webb Space Telescope</div>
+                    <div class="show-stats">37K downloads • 3.2K/mo</div>
+                </div>
+            </div>
+            <div class="show-card">
+                <div class="show-image" style="background-image: url('https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/05/77/fc/0577fc73-131b-c734-e723-2097218bd2f4/mza_15883767458527113916.jpg/600x600bb.jpg')"></div>
+                <div class="show-content">
+                    <div class="show-category">Paranormal</div>
+                    <div class="show-title">BIGFOOT! - Biography Flash</div>
+                    <div class="show-stats">21K downloads • 1.5K/mo</div>
+                </div>
+            </div>
+            <div class="show-card">
+                <div class="show-image" style="background-image: url('https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/c4/a9/d6/c4a9d64c-84fc-1679-a283-f476c8402a84/mza_1160912576815935274.jpg/600x600bb.jpg')"></div>
+                <div class="show-content">
+                    <div class="show-category">Business</div>
+                    <div class="show-title">Sam Bankman-Fried - Biography Flash</div>
+                    <div class="show-stats">1.2K downloads</div>
+                </div>
+            </div>
+            <div class="show-card">
+                <div class="show-image" style="background-image: url('https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/fe/22/ce/fe22ceeb-1ff8-367d-88b0-ba7bd63e18f6/mza_17967288493434011705.jpg/600x600bb.jpg')"></div>
+                <div class="show-content">
+                    <div class="show-category">Sports</div>
+                    <div class="show-title">Lewis Hamilton - Biography Flash</div>
+                    <div class="show-stats">617 downloads • 97/mo</div>
+                </div>
+            </div>
+            <div class="show-card">
+                <div class="show-image" style="background-image: url('https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/cb/82/7c/cb827c6c-1f73-918a-3408-d66c3e650c9f/mza_17511150064962548658.jpg/600x600bb.jpg')"></div>
+                <div class="show-content">
+                    <div class="show-category">Music</div>
+                    <div class="show-title">Travis Scott - Biography Flash</div>
+                    <div class="show-stats">Growing audience</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="why">
+    <section>
+        <div class="brand-banner">
+            <h3>🎬 Brand Integration Showcase</h3>
+            <p>See examples of how brands partner with our AI personalities for sponsored content, custom shows, and integrated campaigns.</p>
+            <a href="brand-integration.html" class="cta-btn">View Brand Work</a>
+        </div>
+    </section>
+
+    <section id="categories">
+        <div class="section-header">
+            <h2>Content <strong>Categories</strong></h2>
+            <p class="section-subtitle">Click any category to explore shows and audience data</p>
+        </div>
+        <div class="categories-grid">
+            <a href="categories/history-biography.html" class="category-card">
+                <span class="category-icon">📚</span>
+                <div class="category-name">History & Biography</div>
+                <div class="category-stats"><strong>500+</strong> shows</div>
+            </a>
+            <a href="categories/classic-literature.html" class="category-card">
+                <span class="category-icon">🎭</span>
+                <div class="category-name">Classic Literature & Radio</div>
+                <div class="category-stats"><strong>300+</strong> shows</div>
+            </a>
+            <a href="categories/health-wellness.html" class="category-card">
+                <span class="category-icon">🏥</span>
+                <div class="category-name">Health & Wellness</div>
+                <div class="category-stats"><strong>200+</strong> shows</div>
+            </a>
+            <a href="categories/business-finance.html" class="category-card">
+                <span class="category-icon">💰</span>
+                <div class="category-name">Business & Finance</div>
+                <div class="category-stats"><strong>150+</strong> shows</div>
+            </a>
+            <a href="categories/technology-ai.html" class="category-card">
+                <span class="category-icon">🤖</span>
+                <div class="category-name">Technology & AI</div>
+                <div class="category-stats"><strong>100+</strong> shows</div>
+            </a>
+            <a href="categories/weather-local.html" class="category-card">
+                <span class="category-icon">🌤️</span>
+                <div class="category-name">Weather & Local</div>
+                <div class="category-stats"><strong>50+</strong> markets</div>
+            </a>
+            <a href="categories/sports.html" class="category-card">
+                <span class="category-icon">🏈</span>
+                <div class="category-name">Sports</div>
+                <div class="category-stats"><strong>100+</strong> shows</div>
+            </a>
+            <a href="categories/entertainment.html" class="category-card">
+                <span class="category-icon">🎬</span>
+                <div class="category-name">Entertainment & Celebrity</div>
+                <div class="category-stats"><strong>200+</strong> shows</div>
+            </a>
+        </div>
+    </section>
+
+    <section>
         <div class="section-header">
             <h2>Why <strong>Partner</strong> With Us</h2>
-            <p class="section-subtitle">Unique advantages that set Inception Point AI apart</p>
         </div>
         <div class="benefits-grid">
             <div class="benefit-card">
                 <div class="benefit-icon">🎯</div>
                 <div class="benefit-title">Contextual Precision</div>
-                <div class="benefit-desc">Place your brand alongside highly relevant content. 5,000+ shows span every niche imaginable—from finance to fitness to fandom.</div>
+                <div class="benefit-desc">5,000+ shows across every niche. Place your brand alongside highly relevant content.</div>
             </div>
             <div class="benefit-card">
                 <div class="benefit-icon">📈</div>
                 <div class="benefit-title">Scale + Efficiency</div>
-                <div class="benefit-desc">AI-powered production means 3,000+ new episodes weekly. Massive inventory, competitive rates, consistent quality.</div>
-            </div>
-            <div class="benefit-card">
-                <div class="benefit-icon">🌍</div>
-                <div class="benefit-title">Local & National</div>
-                <div class="benefit-desc">Hyperlocal weather and regional content alongside national programming. Target any market with precision.</div>
+                <div class="benefit-desc">3,000+ new episodes weekly. Massive inventory, competitive rates, consistent quality.</div>
             </div>
             <div class="benefit-card">
                 <div class="benefit-icon">✨</div>
                 <div class="benefit-title">Brand Safe</div>
-                <div class="benefit-desc">100% controlled content means no controversies, no surprises. Complete brand safety guaranteed.</div>
+                <div class="benefit-desc">100% controlled content. No controversies, no surprises. Complete brand safety.</div>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🌍</div>
+                <div class="benefit-title">Local & National</div>
+                <div class="benefit-desc">Hyperlocal weather and regional content alongside national programming.</div>
             </div>
             <div class="benefit-card">
                 <div class="benefit-icon">📊</div>
                 <div class="benefit-title">Data-Driven</div>
-                <div class="benefit-desc">Real-time performance data across every show. Optimize campaigns with granular insights and transparent reporting.</div>
+                <div class="benefit-desc">Real-time performance data. Optimize campaigns with granular insights.</div>
             </div>
             <div class="benefit-card">
                 <div class="benefit-icon">🎨</div>
                 <div class="benefit-title">Custom Content</div>
-                <div class="benefit-desc">Sponsor a personality. Create branded shows. Build custom content that resonates with your audience.</div>
+                <div class="benefit-desc">Sponsor a personality. Create branded shows. Build custom campaigns.</div>
             </div>
         </div>
     </section>
@@ -813,30 +733,27 @@
     <div class="network-section">
         <div class="section-header">
             <h2>Our <strong>Network</strong></h2>
-            <p class="section-subtitle">Part of the Inception Point AI ecosystem</p>
         </div>
         <div class="network-grid">
             <a href="https://www.inceptionpoint.ai" target="_blank" class="network-card">
                 <h3>Inception Point AI</h3>
-                <p>Where AI Gets a Personality. Creating the next generation of AI-powered content and characters.</p>
+                <p>Where AI Gets a Personality. The next generation of AI-powered content.</p>
                 <span class="link">inceptionpoint.ai →</span>
             </a>
             <a href="https://www.quietperiodplease.com" target="_blank" class="network-card">
                 <h3>Quiet Please Network</h3>
-                <p>The world's largest independent AI-native podcast network. 5,000+ shows and growing.</p>
+                <p>The world's largest independent AI-native podcast network.</p>
                 <span class="link">quietperiodplease.com →</span>
             </a>
         </div>
     </div>
 
     <section class="cta-section">
-        <div class="hero-content">
-            <h2>Ready to Reach <strong>Millions</strong>?</h2>
-            <p class="section-subtitle">Let's discuss how Inception Point AI can amplify your brand.</p>
-            <div class="cta-buttons">
-                <a href="mailto:partnerships@inceptionpoint.ai" class="cta-btn">Request Rate Card</a>
-                <a href="mailto:partnerships@inceptionpoint.ai?subject=Custom%20Campaign%20Inquiry" class="cta-secondary">Custom Campaigns</a>
-            </div>
+        <h2>Ready to Reach <strong>Millions</strong>?</h2>
+        <p class="section-subtitle">Let's discuss how Inception Point AI can amplify your brand.</p>
+        <div class="cta-buttons">
+            <a href="contact.html" class="cta-btn">Get in Touch</a>
+            <a href="brand-integration.html" class="cta-secondary">View Brand Work</a>
         </div>
     </section>
 
@@ -844,18 +761,10 @@
         <img src="logo.jpg" alt="Inception Point AI" class="footer-logo">
         <p>&copy; 2026 Inception Point AI. All rights reserved.</p>
         <p><a href="mailto:partnerships@inceptionpoint.ai">partnerships@inceptionpoint.ai</a></p>
-        <p style="margin-top: 16px;">
+        <p style="margin-top: 12px;">
             <a href="https://www.inceptionpoint.ai" target="_blank">inceptionpoint.ai</a> · 
             <a href="https://www.quietperiodplease.com" target="_blank">quietperiodplease.com</a>
         </p>
     </footer>
-
-    <script>
-        window.exportVisits = function() {
-            const visits = JSON.parse(localStorage.getItem('ipai_visits') || '[]');
-            console.table(visits);
-            return visits;
-        };
-    </script>
 </body>
 </html>

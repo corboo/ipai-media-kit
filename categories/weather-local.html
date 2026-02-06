@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather & Local | Inception Point AI Media Kit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #d4af37; --gray: #8a8a8a; --gray-light: #b0b0b0; --bg-dark: #0a0a0a; --bg-card: #111111; --text: #ffffff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-dark); color: var(--text); line-height: 1.6; }
+        nav { padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(212, 175, 55, 0.1); }
+        .nav-logo { height: 36px; } .back-link { color: var(--gray); text-decoration: none; font-size: 13px; } .back-link:hover { color: var(--gold); }
+        .hero { text-align: center; padding: 60px 40px; } .hero .icon { font-size: 48px; margin-bottom: 16px; }
+        h1 { font-size: 32px; font-weight: 400; margin-bottom: 8px; color: var(--gray-light); } h1 strong { font-weight: 600; color: var(--gold); }
+        .hero p { color: var(--gray); font-size: 16px; }
+        .stats-bar { display: flex; justify-content: center; gap: 48px; padding: 24px; background: var(--bg-card); border-top: 1px solid rgba(212, 175, 55, 0.1); border-bottom: 1px solid rgba(212, 175, 55, 0.1); }
+        .stat { text-align: center; } .stat-num { font-size: 24px; font-weight: 700; color: var(--gold); } .stat-label { font-size: 11px; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; }
+        section { padding: 60px 40px; max-width: 1200px; margin: 0 auto; }
+        .shows-table { width: 100%; border-collapse: collapse; }
+        .shows-table th { text-align: left; padding: 16px; font-size: 11px; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .shows-table td { padding: 16px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 14px; }
+        .shows-table tr:hover { background: var(--bg-card); } .show-name { font-weight: 500; } .stat-highlight { color: var(--gold); }
+        .highlight-box { background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(184, 134, 11, 0.05) 100%); border: 1px solid rgba(212, 175, 55, 0.2); padding: 32px; margin-bottom: 32px; text-align: center; }
+        .highlight-box h3 { color: var(--gold); margin-bottom: 12px; font-size: 18px; }
+        .highlight-box p { color: var(--gray-light); font-size: 14px; }
+        .cta-section { text-align: center; padding: 60px 40px; }
+        .cta-btn { display: inline-block; background: linear-gradient(135deg, #b8860b 0%, #d4af37 50%, #f4d03f 100%); color: var(--bg-dark); padding: 12px 28px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; }
+        footer { padding: 40px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); } footer p { color: var(--gray); font-size: 12px; } footer a { color: var(--gold); text-decoration: none; }
+    </style>
+</head>
+<body>
+    <nav><a href="../index.html"><img src="../logo.jpg" alt="Inception Point AI" class="nav-logo"></a><a href="../index.html" class="back-link">← Back to Media Kit</a></nav>
+    <div class="hero"><div class="icon">🌤️</div><h1>Weather & <strong>Local</strong></h1><p>Hyperlocal daily weather forecasts for 50+ US markets</p></div>
+    <div class="stats-bar"><div class="stat"><div class="stat-num">50+</div><div class="stat-label">Markets</div></div><div class="stat"><div class="stat-num">Daily</div><div class="stat-label">Updates</div></div><div class="stat"><div class="stat-num">Local</div><div class="stat-label">Targeting</div></div></div>
+    <section>
+        <div class="highlight-box">
+            <h3>🎯 Hyperlocal Advertising Opportunity</h3>
+            <p>Target specific DMAs with daily weather content. Perfect for local businesses, regional retailers, and location-based services.</p>
+        </div>
+        <table class="shows-table">
+            <thead><tr><th>Market / Show</th><th>Region</th><th>Frequency</th></tr></thead>
+            <tbody>
+                <tr><td class="show-name">New York City Weather Forecast</td><td>Northeast</td><td>Daily</td></tr>
+                <tr><td class="show-name">Los Angeles Weather Update</td><td>West Coast</td><td>Daily</td></tr>
+                <tr><td class="show-name">Chicago Area Weather</td><td>Midwest</td><td>Daily</td></tr>
+                <tr><td class="show-name">Dallas-Fort Worth Weather</td><td>Southwest</td><td>Daily</td></tr>
+                <tr><td class="show-name">Houston Weather Forecast</td><td>Southwest</td><td>Daily</td></tr>
+                <tr><td class="show-name">Phoenix Area Weather</td><td>Southwest</td><td>Daily</td></tr>
+                <tr><td class="show-name">Philadelphia Weather Update</td><td>Northeast</td><td>Daily</td></tr>
+                <tr><td class="show-name">San Antonio Weather</td><td>Southwest</td><td>Daily</td></tr>
+                <tr><td class="show-name">San Diego Weather Forecast</td><td>West Coast</td><td>Daily</td></tr>
+                <tr><td class="show-name">San Francisco Bay Area Weather</td><td>West Coast</td><td>Daily</td></tr>
+                <tr><td class="show-name">Austin Weather Update</td><td>Southwest</td><td>Daily</td></tr>
+                <tr><td class="show-name">Seattle Weather Forecast</td><td>Pacific Northwest</td><td>Daily</td></tr>
+                <tr><td class="show-name">Denver Weather</td><td>Mountain</td><td>Daily</td></tr>
+                <tr><td class="show-name">Boston Area Weather</td><td>Northeast</td><td>Daily</td></tr>
+                <tr><td class="show-name">Atlanta Weather Update</td><td>Southeast</td><td>Daily</td></tr>
+                <tr><td class="show-name">Miami-Fort Lauderdale Weather</td><td>Southeast</td><td>Daily</td></tr>
+                <tr><td class="show-name">Minneapolis Weather Forecast</td><td>Midwest</td><td>Daily</td></tr>
+                <tr><td class="show-name">Tampa Bay Weather</td><td>Southeast</td><td>Daily</td></tr>
+                <tr><td class="show-name">Detroit Area Weather</td><td>Midwest</td><td>Daily</td></tr>
+                <tr><td class="show-name">Portland Weather Update</td><td>Pacific Northwest</td><td>Daily</td></tr>
+                <tr><td class="show-name">Charlotte Weather</td><td>Southeast</td><td>Daily</td></tr>
+                <tr><td class="show-name">San Jose / Silicon Valley Weather</td><td>West Coast</td><td>Daily</td></tr>
+                <tr><td class="show-name">Orlando Weather Forecast</td><td>Southeast</td><td>Daily</td></tr>
+                <tr><td class="show-name">Indianapolis Weather</td><td>Midwest</td><td>Daily</td></tr>
+                <tr><td class="show-name">Nashville Weather Update</td><td>Southeast</td><td>Daily</td></tr>
+            </tbody>
+        </table>
+        <p style="color: var(--gray); font-size: 13px; margin-top: 24px; text-align: center;">+ 25 additional markets available. Contact us for full market list.</p>
+    </section>
+    <div class="cta-section"><p style="color: var(--gray); margin-bottom: 20px;">Want to target specific markets?</p><a href="../contact.html" class="cta-btn">Get in Touch</a></div>
+    <footer><p><a href="../index.html">← Back to Media Kit</a> · <a href="mailto:partnerships@inceptionpoint.ai">partnerships@inceptionpoint.ai</a></p></footer>
+</body>
+</html>
