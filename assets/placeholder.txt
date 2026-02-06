@@ -1,0 +1,8 @@
+# Asset Placeholders
+
+These PDF files should be created:
+1. IPAI-Media-Kit-OnePager.pdf - Single page summary
+2. IPAI-Media-Kit-Full.pdf - Complete deck
+3. IPAI-Brand-Assets.zip - Logo pack
+
+For now, the download buttons will show "file not found" until real PDFs are added.
