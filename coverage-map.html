@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coverage Map | Inception Point AI</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        :root {
+            --gold: #d4af37;
+            --gold-light: #f4d03f;
+            --bg-dark: #0a0a0a;
+            --bg-card: #111111;
+            --text: #ffffff;
+            --gray: #8a8a8a;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text);
+        }
+        
+        .header {
+            padding: 24px 40px;
+            background: var(--bg-card);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            font-weight: 300;
+        }
+        
+        .header h1 strong {
+            font-weight: 700;
+            color: var(--gold);
+        }
+        
+        .back-link {
+            color: var(--gold);
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .back-link:hover { text-decoration: underline; }
+        
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            padding: 20px;
+            background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-dark) 100%);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--gold);
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        #map {
+            height: calc(100vh - 180px);
+            width: 100%;
+        }
+        
+        .leaflet-popup-content-wrapper {
+            background: var(--bg-card);
+            color: var(--text);
+            border-radius: 8px;
+            border: 1px solid var(--gold);
+        }
+        
+        .leaflet-popup-content {
+            margin: 12px 16px;
+        }
+        
+        .leaflet-popup-tip {
+            background: var(--bg-card);
+            border: 1px solid var(--gold);
+        }
+        
+        .popup-city {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+        
+        .popup-shows {
+            font-size: 13px;
+            color: var(--gray);
+        }
+        
+        .popup-shows li {
+            margin: 4px 0;
+            list-style: none;
+        }
+        
+        .popup-shows li::before {
+            content: "📻 ";
+        }
+        
+        .legend {
+            position: absolute;
+            bottom: 30px;
+            right: 20px;
+            background: var(--bg-card);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px;
+            padding: 16px;
+            z-index: 1000;
+        }
+        
+        .legend h4 {
+            font-size: 12px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 6px 0;
+            font-size: 12px;
+            color: var(--gray);
+        }
+        
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .legend-dot.weather { background: #4ade80; }
+        .legend-dot.surf { background: #60a5fa; }
+        .legend-dot.news { background: #f472b6; }
+        .legend-dot.other { background: #d4af37; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Regional <strong>Coverage Map</strong></h1>
+        <a href="index.html" class="back-link">← Back to Media Kit</a>
+    </div>
+    
+    <div class="stats-bar">
+        <div class="stat">
+            <div class="stat-value">25+</div>
+            <div class="stat-label">Markets</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">16</div>
+            <div class="stat-label">Weather Cities</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">3</div>
+            <div class="stat-label">Surf Reports</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">5</div>
+            <div class="stat-label">State Trackers</div>
+        </div>
+    </div>
+    
+    <div id="map"></div>
+    
+    <div class="legend">
+        <h4>Content Types</h4>
+        <div class="legend-item"><span class="legend-dot weather"></span> Weather</div>
+        <div class="legend-item"><span class="legend-dot surf"></span> Surf Reports</div>
+        <div class="legend-item"><span class="legend-dot news"></span> News Trackers</div>
+        <div class="legend-item"><span class="legend-dot other"></span> Other Local</div>
+    </div>
+    
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // Initialize map centered on US
+        const map = L.map('map', {
+            center: [39.8283, -98.5795],
+            zoom: 4,
+            zoomControl: true
+        });
+        
+        // Dark tile layer
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; OpenStreetMap, &copy; CARTO',
+            maxZoom: 19
+        }).addTo(map);
+        
+        // Custom marker icons
+        function createIcon(color) {
+            return L.divIcon({
+                className: 'custom-marker',
+                html: `<div style="
+                    width: 24px;
+                    height: 24px;
+                    background: ${color};
+                    border: 3px solid #fff;
+                    border-radius: 50%;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+                "></div>`,
+                iconSize: [24, 24],
+                iconAnchor: [12, 12],
+                popupAnchor: [0, -12]
+            });
+        }
+        
+        const icons = {
+            weather: createIcon('#4ade80'),
+            surf: createIcon('#60a5fa'),
+            news: createIcon('#f472b6'),
+            other: createIcon('#d4af37')
+        };
+        
+        // Location data
+        const locations = [
+            { city: "Chicago, IL", lat: 41.8781, lng: -87.6298, type: "weather", shows: ["Chicago Weather Daily", "Weather In Chicago"] },
+            { city: "Dallas, TX", lat: 32.7767, lng: -96.7970, type: "weather", shows: ["The Weather In Dallas"] },
+            { city: "Atlanta, GA", lat: 33.7490, lng: -84.3880, type: "weather", shows: ["Weather In Atlanta GA"] },
+            { city: "Austin, TX", lat: 30.2672, lng: -97.7431, type: "weather", shows: ["Weather In Austin Texas"] },
+            { city: "Baltimore, MD", lat: 39.2904, lng: -76.6122, type: "weather", shows: ["Weather In Baltimore MD"] },
+            { city: "Boston, MA", lat: 42.3601, lng: -71.0589, type: "weather", shows: ["Weather In Boston MA"] },
+            { city: "Columbus, OH", lat: 39.9612, lng: -82.9988, type: "weather", shows: ["Weather in Columbus OH"] },
+            { city: "Denver, CO", lat: 39.7392, lng: -104.9903, type: "weather", shows: ["Weather In Denver CO"] },
+            { city: "Los Angeles, CA", lat: 34.0522, lng: -118.2437, type: "weather", shows: ["Weather in Los Angeles", "Surf Report for Los Angeles California"] },
+            { city: "Miami, FL", lat: 25.7617, lng: -80.1918, type: "weather", shows: ["Weather in Miami"] },
+            { city: "New York, NY", lat: 40.7128, lng: -74.0060, type: "weather", shows: ["Weather in New York City"] },
+            { city: "Portland, OR", lat: 45.5051, lng: -122.6750, type: "weather", shows: ["Weather In Portland OR"] },
+            { city: "San Francisco, CA", lat: 37.7749, lng: -122.4194, type: "weather", shows: ["Weather In San Francisco California"] },
+            { city: "Seattle, WA", lat: 47.6062, lng: -122.3321, type: "weather", shows: ["Weather In Seattle WA"] },
+            { city: "Washington, D.C.", lat: 38.9072, lng: -77.0369, type: "weather", shows: ["Weather In Washington D.C."] },
+            { city: "Montauk, NY", lat: 41.0357, lng: -71.9545, type: "surf", shows: ["Montauk Surf Report for Montauk New York"] },
+            { city: "San Diego, CA", lat: 32.7157, lng: -117.1611, type: "surf", shows: ["Surf Report for San Diego California"] },
+            { city: "Des Moines, IA", lat: 41.5868, lng: -93.6250, type: "other", shows: ["Allergy Forecast for Des Moines Iowa"] },
+            { city: "Wilmington, NC", lat: 34.2257, lng: -77.9447, type: "other", shows: ["Wilmington NC Fishing Report Today"] },
+            { city: "Kentucky (State)", lat: 37.8393, lng: -84.2700, type: "news", shows: ["Kentucky News and Info Tracker - Daily"] },
+            { city: "Oklahoma (State)", lat: 35.4676, lng: -97.5164, type: "news", shows: ["Oklahoma News and Info Tracker - Daily"] },
+            { city: "Oregon (State)", lat: 43.8041, lng: -120.5542, type: "news", shows: ["Oregon News and Info Tracker - Daily"] },
+            { city: "California (State)", lat: 36.7783, lng: -119.4179, type: "news", shows: ["California State News and Info Tracker"] },
+            { city: "Tokyo, Japan", lat: 35.6762, lng: 139.6503, type: "news", shows: ["Tokyo News and Information"] }
+        ];
+        
+        // Add markers
+        locations.forEach(loc => {
+            const marker = L.marker([loc.lat, loc.lng], { icon: icons[loc.type] }).addTo(map);
+            
+            const showsList = loc.shows.map(s => `<li>${s}</li>`).join('');
+            marker.bindPopup(`
+                <div class="popup-city">${loc.city}</div>
+                <ul class="popup-shows">${showsList}</ul>
+            `);
+        });
+    </script>
+</body>
+</html>
